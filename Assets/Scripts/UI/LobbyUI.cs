@@ -32,13 +32,7 @@ public class LobbyUI : MonoBehaviour
 
     private void Awake()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
-        panelRenderer = GetComponent<PanelRenderer>();
-        panelRenderer.RegisterUIReloadCallback(UIReload);
 
-       
-
-        SetIdle();
     }
 
     private void UIReload(PanelRenderer panelRenderer, VisualElement root, int version)
@@ -68,6 +62,13 @@ public class LobbyUI : MonoBehaviour
 
     private void Start()
     {
+        
+        panelRenderer = GetComponent<PanelRenderer>();
+        panelRenderer.RegisterUIReloadCallback(UIReload);
+
+       
+
+        SetIdle();
     }
 
     public void SetIdle()
